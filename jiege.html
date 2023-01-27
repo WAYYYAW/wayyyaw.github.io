@@ -1,45 +1,62 @@
 <html>
 <title>杰哥的秘密</title>
 <head>
-
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 <script type="text/javascript" language="JavaScript">
 function tanchuang() {
 	//先给出提示
-	alert ('请点击确定为杰哥助力')
-	var nownum = 0;
-   	var cishu=Number(nownum)+1;
+	document.getElementById("show").style.display="none";
+	alert ('你的每一下点击都是杰哥的一下飞机,\n'+
+		'点击确定进行助力\n'+
+		'点击取消结束助力'
+		)
+	
+	//var nownum = 0;
+   	var cishu=0;
 	//进入循环
     do{
 	var yorn;
-    	yorn=confirm ('杰哥今日第' +cishu+'guan')//给出提示
+    	yorn=confirm ('杰哥今日' +cishu+'管')//给出提示
 		//判断确定还是取消
 		if (yorn== true){
 			cishu=cishu+1//次数加一
+			document.getElementById("how").innerHTML="在你的帮助下，杰哥弄了"+cishu+"次"
 	   	}else{
 	  	 	break//跳出do
 	   	}
-	}while (nownum<4)
+	}while (cishu<1800000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
 	//将次数修正后转入afternum
-   	var afternum = Number(cishu)-1;
+   	//var afternum = Number(cishu)-1;
 	//document.getElementById("result").value=afternum;//
-	document.getElementById("cs").innerHTML=afternum;//将实际点击次数显示出来
-	//判断杰哥感谢还是伤心
-	if(afternum <1){
-		document.getElementById("hua").innerHTML="杰哥好伤心～～～"
-	}else if (afternum <15){
-		document.getElementById("hua").innerHTML="杰哥好感谢你～";
-	}else if (afternum <30) {
-        document.getElementById("hua").innerHTML="杰哥好爽～～～";
-    }else {
-        document.getElementById("hua").innerHTML="杰哥爽上天了～";
-    }
+	//document.getElementById("cs").innerHTML=afternum;//将实际点击次数显示出来
+	//判断给不给答案
+	if(cishu <=1){
+		document.getElementById("hua").innerHTML="才一下?!杰哥不愿意"
+	}else if (cishu <10){
+		document.getElementById("hua").innerHTML="还不到10下,杰哥很不爽";
+	}else if (cishu <19) {
+        document.getElementById("hua").innerHTML="杰哥申请继续";
+		document.getElementById("show").style.display="block";//<!--显示彩蛋按钮-->
+    }else if (cishu<25){
+        document.getElementById("hua").innerHTML="杰哥还能坚持";
+    }else if (cishu<30){
+		document.getElementById("hua").innerHTML="杰哥：加油:-0";
+		//
+	}else if (cishu>40){
+		document.getElementById("hua").innerHTML="杰哥快断了都";
+	}else if (cishu>50) {
+		document.getElementById("hua").innerHTML="杰哥断了...";
+	}
 }
 function xiugai() {
-    var xiugaishu=document.getElementById('xgk').value;
-    document.getElementById("cs").innerHTML=xiugaishu;
-	alert ('你竟然作弊！')
-	//alert ('老老实实的去点,想这些花里胡哨的干嘛!')
-	//tanchuang()
+    //var xiugaishu=document.getElementById('xgk').value;
+    //document.getElementById("cs").innerHTML=xiugaishu;
+	alert ('老老实实的去点,杰哥要你亲手来')
+	tanchuang()
+}
+function caidan() {
+	
 }
 </script>
          <!--按钮风格-->
@@ -50,32 +67,48 @@ function xiugai() {
 	            width: 800px;
 	            height: 100px;
 	            border:0;
-		    display:felx;
+		    	display:felx;
 	            font-size: 64px;
 	            box-sizing: content-box;
 	            left: calc(50% - 400px);
 	            top: calc(30% - 50px);
 	            border-radius: 5px;
-		    position: absolute;}
-            .button1:hover{
+		    	position: absolute;}
+.button1:hover{
 	            background-color: #a54b4a;
 	            position: absolute; }
-
+.button2{
+				background-color:#f66f6a;
+	            color:white;
+	            width: 800px;
+	            height: 100px;
+	            border:0;
+		    	display:none;
+	            font-size: 64px;
+	            box-sizing: content-box;
+	            left: calc(50% - 400px);
+	            top: calc(60% - 50px);
+	            border-radius: 5px;
+		    	position: absolute;
+}
 </style>
 </head>
 <!--进入主干-->
-<body style="background-color: #393a46">
-<!--居中-->
+<body >
+
+	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+	<!--居中-->
 <center>
 <!--按钮-->
-<button type="button" class="button1" onclick = tanchuang()>点我查看详情</button>
-
-<h1 style="color: aquamarine;font-size: 80px;">你已经为杰哥助力了<i style="color: rebeccapurple;" id="cs">0</i>次</h1>
+<button type="button" class="button1" onclick = tanchuang()>点我查看答案详情</button>
+<button type="hidden" class="button2" onclick = caidan() id="彩蛋">杰哥的按钮，不要点！</button>
+<h1 style="color: aquamarine;font-size: 80px;"id="how"> <i style="color: rebeccapurple;" id="cs"> </i> </h1>
 	<h2 style="color: #a54b4a;height: 1000px;font-size: xxx-large;" id="hua"></h2>
 
 <input value="1" type="hidden" id="nownum"/>
 </center>
+
 <input style="top: 500px;" type="number" value="" id="xgk"/>
-	<button type="button" class="button2" onclick =xiugai()>修改</button> 
+<button type="button" class="button3" onclick =xiugai()>修改</button> 
 </body>
 </html>
