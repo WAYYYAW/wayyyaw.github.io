@@ -6,7 +6,7 @@
 <script type="text/javascript" language="JavaScript">
 function tanchuang() {
 	//先给出提示
-	document.getElementById("caidan").style.display="none";
+	//document.getElementById("caidan").style.display="none"
 	alert ('你的每一下点击都是杰哥的一下飞机,\n'+
 		'点击确定进行助力\n'+
 		'点击取消结束助力'
@@ -35,18 +35,23 @@ function tanchuang() {
 		document.getElementById("hua").innerHTML="才一下?!杰哥不愿意"
 	}else if (cishu <10){
 		document.getElementById("hua").innerHTML="还不到10下,杰哥很不爽";
+		//document.getElementById("caidan").style.display="block"
 	}else if (cishu <19) {
         document.getElementById("hua").innerHTML="杰哥申请继续";
-		document.getElementById("show").style.display="block";//<!--显示彩蛋按钮-->
+		document.getElementById("caidan").style.display="block";//<!--显示彩蛋按钮-->
     }else if (cishu<25){
         document.getElementById("hua").innerHTML="杰哥还能坚持";
+		document.getElementById("caidan").style.display="block";//<!--显示彩蛋按钮-->
     }else if (cishu<30){
 		document.getElementById("hua").innerHTML="杰哥：加油:-0";
+		document.getElementById("caidan").style.display="block";//<!--显示彩蛋按钮-->
 		//
 	}else if (cishu>40){
 		document.getElementById("hua").innerHTML="杰哥快断了都";
+		document.getElementById("caidan").style.display="block";//<!--显示彩蛋按钮-->
 	}else if (cishu>50) {
 		document.getElementById("hua").innerHTML="杰哥断了...";
+		document.getElementById("caidan").style.display="block";//<!--显示彩蛋按钮-->
 	}
 }
 function xiugai() {
@@ -55,10 +60,17 @@ function xiugai() {
 	alert ('老老实实的去点,杰哥要你亲手来')
 	tanchuang()
 }
-function caidan() {
+function caidan() { 
+		window.open('https://wayyyaw.github.io/photo.html');
+	//window.history.go(-1);//返回上一页
+	//window.history.back(-1);//返回上一页
 	
-}
+	}
 </script>
+
+
+	
+	
          <!--按钮风格-->
 <style>
 .button1{
@@ -100,8 +112,8 @@ function caidan() {
 	<!--居中-->
 <center>
 <!--按钮-->
-<button type="button" class="button1" onclick = tanchuang()>点我查看详情</button>
-<button type="hidden" class="button2" onclick = caidan() id="彩蛋">杰哥的按钮，不要点！</button>
+<button type="button" class="button1" onclick = tanchuang()>点我查看答案详情</button>
+<button type="hidden" class="button2" onclick="caidan()" id="caidan">杰哥的按钮，不要点！</button>
 <h1 style="color: aquamarine;font-size: 80px;"id="how"> <i style="color: rebeccapurple;" id="cs"> </i> </h1>
 	<h2 style="color: #a54b4a;height: 1000px;font-size: xxx-large;" id="hua"></h2>
 
