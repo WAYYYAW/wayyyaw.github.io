@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>RecardtoForget</title>
+    <script>
+        var psword=["11261","06122","way@lovexzn.tk3","way610@126.com3","螺蛳粉4","humble5","云平晚霞送孤舟6","C7","c7","808","80年8","04250","4月25日0"];
+        //var numb=document.getElementById("numb").innerHTML;
+        function show() {
+             document.getElementById("userinput").value="";
+            document.getElementById("ifram").style.display="none";
+            document.getElementById("userinput").style.display="block";
+           document.getElementById("trydiv").style.display="block";//显示出输入框和按钮
+            var inum=Math.round(Math.random()*8);
+            document.getElementById("numb").innerHTML=inum;
+            var numb=inum;
+            switch (numb) {
+                case 1:
+                    document.getElementById("ques").innerHTML="我认为最有意义的一天，格式举例：1223 表示12月13日";
+                    break;
+                case 2:
+                    document.getElementById("ques").innerHTML="徐字诺的生日（阳历），格式举例：12月13日";
+                    break;
+                case 3:
+                    document.getElementById("ques").innerHTML="我的邮箱，格式举例：user@name.dom";
+                    break;
+                case 4:
+                    document.getElementById("ques").innerHTML="徐字诺最爱的食物";
+                    break;
+                case 5:
+                    document.getElementById("ques").innerHTML="simple？";
+                    break;
+                case 6:
+                    document.getElementById("ques").innerHTML="长风涌浪卷波海";
+                    break;
+                case 7:
+                    document.getElementById("ques").innerHTML="我为什么不喜欢吃辣的，A不能吃，B不想吃C都不对";
+                    break;              
+                case 8:
+                    document.getElementById("ques").innerHTML="约定在一起的期限";
+                    break;
+                case 0:
+                    document.getElementById("ques").innerHTML="我的生日（农历）";
+                    break;
+            }
+        }
+        function tof() {
+            var firstword=document.getElementById("userinput").value;
+            var oordinal1=document.getElementById("numb").innerHTML;
+            //document.getElementById("usertest").innerText=(firstword);
+            var userpass=(firstword+oordinal1);
+            if (psword.includes(userpass)) {
+                alert('ture\n'+
+                '网页出现在了下边');
+                document.getElementById("ifram").style.display="block";
+                document.getElementById("ques").innerHTML="正确的答案";
+                document.getElementById("userinput").style.display="none";
+                document.getElementById("trydiv").style.display="none";//隐藏出输入框和按钮
+                document.getElementById("butshow").innerHTML="again?";
+            }else{
+                alert("error")
+            }
+            }
+        function zb() {
+            document.getElementById("ifram").style.display="block"
+            
+        }
+    </script>
+    <style>
+        .butshow1{
+            background-color:#37a190;
+	            color:white;
+	            width: 500px;
+	            height: 80px;
+	            border:0; 
+	            font-size: 64px;
+	            box-sizing: content-box;
+	            left: calc(50% - 250px);
+	            top: calc(10% - 40px);
+	            border-radius: 5px;
+		    position: absolute;
+        }
+        .butshow2{
+            background-color:#37a190;
+	            color:white;
+	            width: 500px;
+	            height: 80px;
+	            border:0; 
+	            font-size: 64px;
+	            box-sizing: content-box;
+	            border-radius: 5px;
+		    
+        }
+        .buttry{
+            background-color: rgb(24, 124, 170);
+            color: rgb(192, 135, 170);
+            width: 120px;
+            height: 50px;
+            font-size: xx-large;
+        }
+        .input{
+            background: #f5f6f7;
+            font-size: x-large;
+            color: #222226;
+            border-radius: 16px 0 0 16px;
+            height: 50px;
+            width: 500px;
+            top: 500px;
+            left: calc(50% - 250px);
+            display: none;
+        }
+        .maindiv{
+        text-align: center; /*让div内部文字居中*/
+        background-color: #fff;
+        border-radius: 20px;
+       
+        position: fixed;
+        
+        top: 100px;
+        left: 22%;
+        right: 10%;
+        bottom: 0;
+        
+        }
+        .iframediv{
+           /* text-align: center; 让div内部文字居中*/
+        background-color: #fff;
+        border-radius: 20px;
+        display: none;
+        position: fixed;
+        height: 1000px;
+        width: 800px;
+        top: 600px;
+        left: 25%;
+        right: 0;
+        bottom: 0;
+        }
+        .iframediv>#ifra{position: absolute;transform:scale(1,1.4);}
+
+    </style>
+ <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+ 
+ <script>
+     L2Dwidget.init({
+         "model": {
+             "jsonPath": "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+             "scale": 1
+         },
+         "display": {
+             "position": "left",
+             "width": 250,
+             "height": 300,
+             "hOffset": 0,
+             "vOffset": -20
+         },
+         "mobile": {
+             "show": true,
+             "scale": 0.5
+         },
+         "react": {
+             "opacityDefault": 0.7,
+             "opacityOnHover": 0.2
+         }
+     });
+ </script>
+ 
+</head>
+<body>
+	<div> <div id="content" class="mw-body" role="main"></div>
+        <p id="numb"style="font-size: 24px;">numb</p>
+        <!-- <p id="userpasstest"style="font-size: 24px;">userpasstest</p> -->
+        <!-- <p id="usertest" style="font-size: 12px;display:none">test</p> -->
+    </div>
+    
+    <div id="anwser" class="maindiv" id="maindiv">
+       
+        <div>
+            <p id="ques" style="font-size: 64px;">ques</p>
+        </div>
+       
+        <div style="clear: left;height: 250px;">
+            <button id="butshow" onclick="show()" class="butshow2">点我开始</button>
+        </div>
+   
+        
+        <div style="float:left;width: 520px;"> 
+            <input type="text" id="userinput" class="input">
+        </div>
+        <div style="clear: right;float: left;display: none;" id="trydiv">
+            <button id="try" onclick="tof()" class="buttry">提交</button>
+        </div>
+      
+    
+    </div>
+  <div class="iframediv" id="ifram">
+            <iframe frameborder="0"
+            noresize="noresize"
+            style="position: absolute; background: transparent; width: 90%;height: 50%; "
+            src="./lovexznago.html"
+            sandbox="allow-same-origin allow-forms"
+            frameborder="0"
+            id="ifra">
+    </iframe>
+        </div>
+        
+</body>
+</html>
